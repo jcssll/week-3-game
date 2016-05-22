@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="Practice\JavaSolo\css">
+<title>Psychic Game</title>
+<script language="javascript">
+
+
+
+var theNumber = Math.floor(Math.random()*30+1);
+
+//created a variable in js called theNumber equal to a rounded number, and floor rounds down. And it will be a random number. Math.random created a number between 0 & 1. Multiplying by 100 gives me a number a little under 100 thus I add 1 to make sure I get a number between 1 and 100
+
+var guess = function()
+{
+    out(onclick+1)
+}
+function checkguess()
+//curly braces are driving me nuts! What is a good text editor?
+{
+    var guess = document.getElementById('guess');
+    var output = document.getElementById ('output');
+    var myNumber = guess.value;
+
+    if (myNumber < theNumber)
+    {
+
+    output.value = "Too Low, concentrate Jean!"; 
+    //alert("Too Low! Try again.");
+    }
+    /* having trouble adding else if. The code is not working after I enter the else if statement. solution: when you place the ";" after an if, else if you are terminating the if else- semi- colon removed*/
+        else if (myNumber > theNumber)
+        {
+        output.value = "Too High, Jean you must focus!!";
+        }
+        else if (myNumber == theNumber)
+        {
+            output.value = "You got the number, you win! Play again!"
+            alert("You are no longer Jean Grey, You are the Phoenix!!")
+    }
+
+}
+    </script>
+</head>
+<body><h2>Professor X<br> Psychic Game</h2>
+<form>
+Enter a number from 1 to 30:
+<input id="guess" type="text" size="8" /><br />
+<input type="button" value="Guess" onclick="checkguess()"/><br />
+<input id="output" type="text" size="40" /><br />
+</form>
+</body>
+</html>
